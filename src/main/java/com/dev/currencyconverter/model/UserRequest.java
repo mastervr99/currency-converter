@@ -6,24 +6,20 @@ public class UserRequest {
 	private String source_currency;
 	private String target_currency;
 	
-	public void set_amount(double amount) {
+	public UserRequest(double amount, String source_currency, String target_currency) {
 		this.amount = amount;
+		this.source_currency = source_currency;
+		this.target_currency = target_currency;
 	}
+	
 	
 	public double get_amount() {
 		return this.amount;
 	}
-	
-	public void set_source_currency(String source_currency) {
-		this.source_currency = source_currency;
-	}
+
 
 	public String get_source_currency() {
 		return this.source_currency;
-	}
-	
-	public void set_target_currency(String target_currency) {
-		this.target_currency = target_currency;
 	}
 	
 	public String get_target_currency() {

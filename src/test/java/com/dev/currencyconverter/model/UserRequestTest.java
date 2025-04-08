@@ -7,10 +7,7 @@ public class UserRequestTest {
 	
 	@Test
 	public void testUserRequestFields() {
-		UserRequest user_request = new UserRequest();
-		user_request.set_amount(50);
-		user_request.set_source_currency("EUR");
-		user_request.set_target_currency("USD");
+		UserRequest user_request = new UserRequest(50,"EUR","USD");
 		
 		assertEquals(50,user_request.get_amount());
 		assertEquals("EUR", user_request.get_source_currency());
