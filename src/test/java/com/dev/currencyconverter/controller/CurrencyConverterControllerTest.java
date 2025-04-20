@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+@WebMvcTest(CurrencyConverterController.class)
 public class CurrencyConverterControllerTest {
 	
 	@Autowired
@@ -16,14 +17,14 @@ public class CurrencyConverterControllerTest {
 	@Test
 	public void test_convert_endpoint_returns_json_response() throws Exception {
 		mockMvc.perform(get("/convert")
-				.param("amount","100")
-				.param("from", "USD")
-				.param("to", "EUR"))
+					.param("currency_amount","100")
+					.param("from_currency", "USD")
+					.param("to_currency", "EUR"))
 				.andExpect(status().isOk())
-				.andExpect(jsonPath("$.amount").value(100.0))
-				.andExpect(jsonPath("$.from").value("USD"))
-				.andExpect(jsonPath("$.to").value("EUR"))
-				.andExpect(jsonPath("$.converted").value(93.0));
+				.andExpect(jsonPath("$.currency_amount").value(100.0))
+				.andExpect(jsonPath("$.from_currency").value("USD"))
+				.andExpect(jsonPath("$.to_currency").value("EUR"))
+				.andExpect(jsonPath("$.converted_currency_amount").value(93.0));
 	}
 	
 }
