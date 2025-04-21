@@ -10,7 +10,7 @@ public class ExchangeRateResponseTest {
 	@Test
 	public void testExchangeRateApiResponse() {
 		
-		ExchangeRateApiResponse response = new ExchangeRateRespone("success", "EUR", "GBP", 0.8412, 5.8884);
+		ExchangeRateApiResponse response = new ExchangeRateApiResponse("success", "EUR", "GBP", 0.8412, 5.884);
 		
 		assertEquals("success", response.getResult_status());
 		assertEquals("EUR", response.getBase_code());
